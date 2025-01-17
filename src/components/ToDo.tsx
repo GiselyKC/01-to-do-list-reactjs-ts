@@ -5,8 +5,8 @@ import plus from '../assets/plus.svg'
 
 export function ToDo () {
   return (
-    <div className={styles.post}>
-      <div>
+    <div className={styles.toDo}>
+      <div className={styles.post}>
         <input type="text" name="todo" placeholder='Adicione uma nova tarefa'/>
         <button>
           Criar
@@ -14,18 +14,27 @@ export function ToDo () {
         </button>
       </div>
 
-      <div className={styles.header}>
-        <p>Tarefas criadas</p>
-        <p>count</p>
-        <p>Concluidas</p>
-        <p>count</p>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <div>
+            <p><strong>Tarefas criadas</strong></p>
+            <span>0</span>
+          </div>
+          <div>
+            <p><strong>Concluidas</strong></p>
+            <span>0</span>
+          </div>
+        </div>
+
+        <div className={styles.body}>
+        <img src={clipboard} alt="clipboard" />
+          <p>
+            <strong>Você ainda não tem tarefas cadastradas</strong>
+            Crie tarefas e organize seus itens a fazer
+          </p>
+        </div>
       </div>
 
-      <div className={styles.body}>
-      <img src={clipboard} alt="clipboard" />
-        <p>Você ainda não tem tarefas cadastradas</p>
-        <p>Crie tarefas e organize seus itens a fazer</p>
-      </div>
     </div>
   )
 }
