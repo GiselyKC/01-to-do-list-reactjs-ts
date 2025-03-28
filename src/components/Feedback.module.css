@@ -1,0 +1,26 @@
+.feedback {
+  border-top: 2px solid var(--gray-400);
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+
+  padding: 4rem 1.5rem;
+  gap: 1rem;
+
+  font-size: 1rem;
+}
+
+.feedback p {
+  display: flex;
+  flex-direction: column;
+  width: 43rem;
+  align-items: center;
+  color: var(--gray-300);
+}
+
+.feedback img {
+  height: 3.5rem;
+}

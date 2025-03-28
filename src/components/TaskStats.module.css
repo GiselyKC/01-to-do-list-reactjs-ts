@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  
+  font-size: 0.75rem;
+
+  width: 46rem;
+}
+
+.header span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 1.1875rem;
+  width: 1.5625rem;
+  border-radius: 1rem;
+
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+}
+
+.header div {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.header div:first-child {
+  color: var(--blue);
+}
+
+.header div:last-child {
+  color: var(--purple);
+}
