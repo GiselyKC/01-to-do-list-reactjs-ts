@@ -1,20 +1,17 @@
-import { useState } from 'react';
 import styles from './Task.module.css'
 import { Trash } from '@phosphor-icons/react'
 
 interface Props {
   descriptions: {
-    id: string;
-    task: string;
-}[]
+    id: string,
+    task: string,
+  }[]
+  taskChecked: string[],
+  setTaskChecked: (task: string[]) => void,
   onClickNewList: (descriptionId: string) => void
 }
 
-export function Task ({ descriptions, onClickNewList }: Props) {
-  const [taskChecked, setTaskChecked] = useState<string[]>([])
-  console.log(taskChecked)
-
-
+export function Task ({ descriptions, onClickNewList, taskChecked, setTaskChecked }: Props) {
   const resultStylesTask = (id: string) => {
     return taskChecked.some((taskId) => taskId === id)
       ? styles.TaskChecked

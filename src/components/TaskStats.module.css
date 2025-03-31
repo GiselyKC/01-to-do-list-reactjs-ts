@@ -12,12 +12,12 @@
   justify-content: center;
   align-items: center;
 
-  height: 1.1875rem;
-  width: 1.5625rem;
   border-radius: 1rem;
+  padding: 2px 8px;
 
   background-color: var(--gray-400);
   color: var(--gray-200);
+  font-weight: 700;
 }
 
 .header div {

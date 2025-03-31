@@ -14,7 +14,7 @@ import { v4 as uuidv4 } from 'uuid';
 export function App () {
   const [inputValue, setInputValue] = useState<string>('')
   const [listTask, setListTaks] = useState<{ id: string, task: string }[]>([])
-  console.log(listTask)
+  const [taskChecked, setTaskChecked] = useState<string[]>([])
 
   const handleAddTask = () => {
     setListTaks([...listTask, {id: uuidv4(), task: inputValue}])
@@ -24,6 +24,8 @@ export function App () {
   const onClickClean = (descriptionId: string) => {
     const newListTask = listTask.filter((info) => info.id !== descriptionId);
     setListTaks(newListTask);
+    const newListTaskChecked = taskChecked.filter((info) => info !== descriptionId);
+    setTaskChecked(newListTaskChecked);
   }
 
   return (
@@ -42,19 +44,22 @@ export function App () {
         <TaskStats infos={[
           {
             description: 'Tarefas criadas',
-            count: 0
+            count: listTask.length
           },
           {
             description: 'Concluidas',
-            count: 0
+            count: listTask.length,
+            taskCompleted: taskChecked.length
           }
         ]}
       />
 
-      <Task
+     {(listTask.length > 0) && <Task
+        taskChecked={taskChecked}
+        setTaskChecked={setTaskChecked}
         descriptions={listTask}
         onClickNewList={(descriptionId: string) => onClickClean(descriptionId)}
-      />
+      />}
 
       {(listTask.length === 0) && <Feedback
         imagem={clipboard}
